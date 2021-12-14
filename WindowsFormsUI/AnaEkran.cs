@@ -16,5 +16,10 @@ namespace WindowsFormsUI
         {
             InitializeComponent();
         }
+
+        private void AnaEkran_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

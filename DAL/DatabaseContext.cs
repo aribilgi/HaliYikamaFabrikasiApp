@@ -17,6 +17,7 @@ namespace DAL
              * alttaki Ýsim kýsmýna DatabaseContext i verip next dedik
              * açýlan pencereden 3. seçenek olan empty code first modeli seçip ok dedik
              */
+            Database.SetInitializer(new DbInitializer()); //veritabanýna baþlangýç kayýtlarýnýn eklenmesi için oluþturduðumuz DbInitializer ý buraya ekliyoruz
         }
         public virtual DbSet<Kullanici> Kullanicilar { get; set; }
         public virtual DbSet<Musteri> Musteriler { get; set; }

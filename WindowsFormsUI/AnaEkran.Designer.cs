@@ -76,6 +76,7 @@ namespace WindowsFormsUI
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AnaEkran";
             this.Text = "Halı Yıkama Sipariş Yönetimi";
+            this.Load += new System.EventHandler(this.AnaEkran_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
