@@ -51,13 +51,15 @@ namespace WindowsFormsUI
             // 
             // dgvKullanicilar
             // 
+            this.dgvKullanicilar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKullanicilar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKullanicilar.Location = new System.Drawing.Point(12, 12);
             this.dgvKullanicilar.Name = "dgvKullanicilar";
             this.dgvKullanicilar.RowHeadersWidth = 51;
             this.dgvKullanicilar.RowTemplate.Height = 24;
-            this.dgvKullanicilar.Size = new System.Drawing.Size(776, 214);
+            this.dgvKullanicilar.Size = new System.Drawing.Size(728, 214);
             this.dgvKullanicilar.TabIndex = 0;
+            this.dgvKullanicilar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKullanicilar_CellClick);
             // 
             // groupBox1
             // 
@@ -90,15 +92,17 @@ namespace WindowsFormsUI
             this.btnSil.TabIndex = 15;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnGuncelle
             // 
             this.btnGuncelle.Location = new System.Drawing.Point(207, 166);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(75, 23);
+            this.btnGuncelle.Size = new System.Drawing.Size(86, 23);
             this.btnGuncelle.TabIndex = 14;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnEkle
             // 
@@ -204,7 +208,7 @@ namespace WindowsFormsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(752, 450);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvKullanicilar);
             this.Name = "KullaniciYonetimi";

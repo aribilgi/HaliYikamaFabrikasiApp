@@ -1,5 +1,6 @@
 ﻿//using DAL; Dal katmanına kullanıcı arayüzünden direk erişmemeliyiz!!!
 using BL;
+using Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,7 +38,79 @@ namespace WindowsFormsUI
         private void btnEkle_Click(object sender, EventArgs e)
         {
             //databaseContext.Kullanicilar.Add(new Entities.Kullanici { Adi = "Halil" });
+            int sonuc = manager.Add(new Kullanici
+            {
+                Adi = txtAdi.Text,
+                Soyadi = txtSoyadi.Text,
+                Durum = cbDurum.Checked,
+                Email = txtEmail.Text,
+                KullaniciAdi = txtKullaniciAdi.Text,
+                Sifre = txtSifre.Text
+            });
+            if (sonuc > 0)
+            {
+                Temizle();
+                dgvKullanicilar.DataSource = manager.GetAll();
+                MessageBox.Show("Kayıt Başarılı!");
+            }
+            else MessageBox.Show("Kayıt Başarısız!");
+        }
+        void Temizle()
+        {
+            txtAdi.Text = string.Empty;
+            txtEmail.Text = "";
+            txtKullaniciAdi.Text = string.Empty;
+            txtSifre.Text = "";
+            txtSoyadi.Text = string.Empty;
+            cbDurum.Checked = false;
+        }
 
+        private void dgvKullanicilar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = Convert.ToInt32(dgvKullanicilar.CurrentRow.Cells[0].Value);
+            Kullanici kullanici = manager.Find(id);
+            txtAdi.Text = kullanici.Adi;
+            txtSoyadi.Text = kullanici.Soyadi;
+            txtEmail.Text = kullanici.Email;
+            txtSifre.Text = kullanici.Sifre;
+            txtKullaniciAdi.Text = kullanici.KullaniciAdi;
+            cbDurum.Checked = kullanici.Durum;
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dgvKullanicilar.CurrentRow.Cells[0].Value);
+            int sonuc = manager.Update(new Kullanici
+            {
+                Id = id,
+                Adi = txtAdi.Text,
+                Soyadi = txtSoyadi.Text,
+                Durum = cbDurum.Checked,
+                Email = txtEmail.Text,
+                KullaniciAdi = txtKullaniciAdi.Text,
+                Sifre = txtSifre.Text
+            });
+            if (sonuc > 0)
+            {
+                Temizle();
+                dgvKullanicilar.DataSource = manager.GetAll();
+                MessageBox.Show("Kayıt Başarılı!");
+            }
+            else MessageBox.Show("Kayıt Başarısız!");
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dgvKullanicilar.CurrentRow.Cells[0].Value);
+            Kullanici kullanici = manager.Find(id);
+            int sonuc = manager.Delete(kullanici);
+            if (sonuc > 0)
+            {
+                Temizle();
+                dgvKullanicilar.DataSource = manager.GetAll();
+                MessageBox.Show("Silme Başarılı!");
+            }
+            else MessageBox.Show("Silme Başarısız!");
         }
     }
 }

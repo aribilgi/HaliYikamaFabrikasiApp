@@ -2,6 +2,7 @@
 using Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,20 @@ namespace BL
         {
             return databaseContext.Kullanicilar.Find(id); //Find metodu parametre kısmındaki int id bölümünden gelecek id değerine sahip kullanıcıyı bulup döndürür
         }
-
+        public int Add(Kullanici kullanici)
+        {
+            databaseContext.Kullanicilar.Add(kullanici);
+            return databaseContext.SaveChanges();
+        }
+        public int Update(Kullanici kullanici)
+        {
+            databaseContext.Kullanicilar.AddOrUpdate(kullanici);
+            return databaseContext.SaveChanges();
+        }
+        public int Delete(Kullanici kullanici)
+        {
+            databaseContext.Kullanicilar.Remove(kullanici);
+            return databaseContext.SaveChanges();
+        }
     }
 }
