@@ -21,5 +21,23 @@ namespace WindowsFormsUI
         {
 
         }
+
+        private void kullanıcıYönetimiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            KullaniciYonetimi kullaniciYonetimi = new KullaniciYonetimi();
+            kullaniciYonetimi.ShowDialog();
+        }
+
+        private void müşteriYönetimiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MusteriYonetimi musteriYonetimi = new MusteriYonetimi();
+            musteriYonetimi.ShowDialog();
+        }
+
+        private void ürünYönetimiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UrunYonetimi urunYonetimi = new UrunYonetimi();
+            urunYonetimi.ShowDialog();
+        }
     }
 }

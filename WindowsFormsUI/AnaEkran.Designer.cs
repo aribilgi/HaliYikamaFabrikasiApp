@@ -54,18 +54,21 @@ namespace WindowsFormsUI
             this.kullanıcıYönetimiToolStripMenuItem.Name = "kullanıcıYönetimiToolStripMenuItem";
             this.kullanıcıYönetimiToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
             this.kullanıcıYönetimiToolStripMenuItem.Text = "Kullanıcı Yönetimi";
+            this.kullanıcıYönetimiToolStripMenuItem.Click += new System.EventHandler(this.kullanıcıYönetimiToolStripMenuItem_Click);
             // 
             // müşteriYönetimiToolStripMenuItem
             // 
             this.müşteriYönetimiToolStripMenuItem.Name = "müşteriYönetimiToolStripMenuItem";
             this.müşteriYönetimiToolStripMenuItem.Size = new System.Drawing.Size(135, 24);
             this.müşteriYönetimiToolStripMenuItem.Text = "Müşteri Yönetimi";
+            this.müşteriYönetimiToolStripMenuItem.Click += new System.EventHandler(this.müşteriYönetimiToolStripMenuItem_Click);
             // 
             // ürünYönetimiToolStripMenuItem
             // 
             this.ürünYönetimiToolStripMenuItem.Name = "ürünYönetimiToolStripMenuItem";
             this.ürünYönetimiToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
             this.ürünYönetimiToolStripMenuItem.Text = "Ürün Yönetimi";
+            this.ürünYönetimiToolStripMenuItem.Click += new System.EventHandler(this.ürünYönetimiToolStripMenuItem_Click);
             // 
             // AnaEkran
             // 

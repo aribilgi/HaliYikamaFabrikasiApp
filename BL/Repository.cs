@@ -3,6 +3,7 @@ using Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -24,42 +25,45 @@ namespace BL
         }
         public int Add(T entity)
         {
-            throw new NotImplementedException();
+            _objectSet.Add(entity);
+            return SaveChanges();
         }
 
         public int Delete(T entity)
         {
-            throw new NotImplementedException();
+            _objectSet.Remove(entity);
+            return SaveChanges();
         }
 
         public T Find(int id)
         {
-            throw new NotImplementedException();
+            return _objectSet.Find(id);
         }
 
         public T Get(Expression<Func<T, bool>> expression)
         {
-            throw new NotImplementedException();
+            return _objectSet.FirstOrDefault(expression);
         }
 
         public List<T> GetAll()
         {
-            throw new NotImplementedException();
+            return _objectSet.ToList();
         }
 
         public List<T> GetAll(Expression<Func<T, bool>> expression)
         {
-            throw new NotImplementedException();
+            return _objectSet.Where(expression).ToList();
         }
 
         public int SaveChanges()
         {
-            throw new NotImplementedException();
+            return context.SaveChanges();
         }
 
         public int Update(T entity)
         {
-            throw new NotImplementedException();
+            _objectSet.AddOrUpdate(entity);
+            return SaveChanges();
         }
     }
 }
