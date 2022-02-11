@@ -5,18 +5,20 @@
 <html>
 <head runat="server">
     <title></title>
+    <link href="stil.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <%--web form projelerinde varsayılan açılış sayfası default.aspx tir.--%>
     <header>
-        <ul>
-            <li><a href="#">Kullanıcı Yönetimi</a></li>
+        <ul id="menu">
+            <li><a href="KullaniciYonetimi.aspx">Kullanıcı Yönetimi</a></li>
             <li><a href="#">Müşteri Yönetimi</a></li>
             <li><a href="#">Ürün Yönetimi</a></li>
         </ul>
     </header>
+    <hr />
     <form id="form1" runat="server">
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

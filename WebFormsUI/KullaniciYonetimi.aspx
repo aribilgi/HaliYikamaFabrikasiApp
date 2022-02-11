@@ -9,7 +9,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p>
         Kullanıcı Yönetimi<br />
-        <asp:GridView ID="GridView1" runat="server">
+        <asp:GridView ID="dgvKullanicilar" runat="server" OnSelectedIndexChanged="dgvKullanicilar_SelectedIndexChanged">
+            <Columns>
+                <asp:CommandField SelectText="Seç" ShowSelectButton="True" />
+            </Columns>
         </asp:GridView>
     </p>
     <p>
@@ -47,11 +50,16 @@
         </tr>
         <tr>
             <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td>
+                <asp:Button ID="btnEkle" runat="server" Text="Ekle" OnClick="btnEkle_Click" />
+                <asp:Button ID="btnGuncelle" runat="server" Text="Güncelle" Enabled="False" OnClick="btnGuncelle_Click" />
+                <asp:Button ID="btnSil" runat="server" Text="Sil" Enabled="False" OnClick="btnSil_Click" />
+            </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
     </table>
     <p>
+        <asp:Literal ID="ltMesaj" runat="server"></asp:Literal>
     </p>
 </asp:Content>
