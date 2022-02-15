@@ -65,6 +65,9 @@ namespace WebFormsUI
             // web tarafında gridview da cellclick olmadığı için events kısmından SelectedIndexChanged olayını kullanıyoruz
             try
             {
+                btnGuncelle.Enabled = true;
+                btnSil.Enabled = true;
+
                 GridViewRow row = dgvKullanicilar.SelectedRow;
 
                 int id = Convert.ToInt32(row.Cells[1].Text);

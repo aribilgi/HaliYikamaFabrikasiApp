@@ -22,6 +22,7 @@
             <td>Kullanıcı Adı</td>
             <td>
                 <asp:TextBox ID="txtKullaniciAdi" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtKullaniciAdi" ErrorMessage="Boş Geçilemez!" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
             <td>Email</td>
             <td>
@@ -32,10 +33,12 @@
             <td>Adı</td>
             <td>
                 <asp:TextBox ID="txtAdi" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtAdi" ErrorMessage="Boş Geçilemez!" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
             <td>Şifre</td>
             <td>
                 <asp:TextBox ID="txtSifre" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtSifre" ErrorMessage="Boş Geçilemez!" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -53,7 +56,7 @@
             <td>
                 <asp:Button ID="btnEkle" runat="server" Text="Ekle" OnClick="btnEkle_Click" />
                 <asp:Button ID="btnGuncelle" runat="server" Text="Güncelle" Enabled="False" OnClick="btnGuncelle_Click" />
-                <asp:Button ID="btnSil" runat="server" Text="Sil" Enabled="False" OnClick="btnSil_Click" />
+                <asp:Button ID="btnSil" runat="server" Text="Sil" Enabled="False" OnClick="btnSil_Click" ValidationGroup="sil" />
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
