@@ -1,4 +1,5 @@
 ﻿using BL;
+using Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,7 +41,24 @@ namespace WindowsFormsUI
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-
+            var sonuc = manager.Add(new Urun
+            {
+                AlisTarihi = dtpAlisTarihi.Value,
+                Cinsi = txtCinsi.Text,
+                MusteriId = (int)cbMusteriler.SelectedValue,
+                Olcu = txtOlcu.Text,
+                TeslimTarihi = dtpTeslimTarihi.Value,
+                Tutar = Convert.ToDecimal(txtTutar.Text),
+                UrunAdi = txtUrunAdi.Text
+            });
+            if (sonuc > 0)
+            {
+                Temizle();
+                Yukle();
+                MessageBox.Show("Kayıt Başarılı!");
+            }
+            else MessageBox.Show("Kayıt Başarısız!");
         }
+
     }
 }

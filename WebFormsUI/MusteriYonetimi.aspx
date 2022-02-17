@@ -8,8 +8,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p>
-        <asp:GridView ID="dgvMusteriler" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="dgvMusteriler" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="dgvMusteriler_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+            <Columns>
+                <asp:CommandField SelectText="Seç" ShowSelectButton="True" />
+            </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -59,9 +62,9 @@
         <tr>
             <td>&nbsp;</td>
             <td>
-                <asp:Button ID="btnEkle" runat="server" Text="Ekle" />
-                <asp:Button ID="btnGuncelle" runat="server" Enabled="False" Text="Güncelle" />
-                <asp:Button ID="btnSil" runat="server" Enabled="False" Text="Sil" ValidationGroup="sec" />
+                <asp:Button ID="btnEkle" runat="server" Text="Ekle" OnClick="btnEkle_Click" />
+                <asp:Button ID="btnGuncelle" runat="server" Enabled="False" Text="Güncelle" OnClick="btnGuncelle_Click" />
+                <asp:Button ID="btnSil" runat="server" Enabled="False" Text="Sil" ValidationGroup="sec" OnClick="btnSil_Click" />
             </td>
         </tr>
     </table>

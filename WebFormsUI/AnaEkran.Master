@@ -14,7 +14,7 @@
     <header>
         <ul id="menu">
             <li><a href="KullaniciYonetimi.aspx">Kullanıcı Yönetimi</a></li>
-            <li><a href="#">Müşteri Yönetimi</a></li>
+            <li><a href="MusteriYonetimi.aspx">Müşteri Yönetimi</a></li>
             <li><a href="#">Ürün Yönetimi</a></li>
         </ul>
     </header>
