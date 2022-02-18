@@ -24,6 +24,24 @@ namespace WebFormsUI
         protected global::System.Web.UI.WebControls.GridView dgvUrunler;
 
         /// <summary>
+        /// dtpAlisTarihi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar dtpAlisTarihi;
+
+        /// <summary>
+        /// dtpTeslimTarihi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar dtpTeslimTarihi;
+
+        /// <summary>
         /// txtUrunAdi control.
         /// </summary>
         /// <remarks>
@@ -42,15 +60,6 @@ namespace WebFormsUI
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
-        /// txtAlisTarihi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAlisTarihi;
-
-        /// <summary>
         /// txtCinsi control.
         /// </summary>
         /// <remarks>
@@ -67,15 +76,6 @@ namespace WebFormsUI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
-
-        /// <summary>
-        /// txtTeslimTarihi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTeslimTarihi;
 
         /// <summary>
         /// txtOlcu control.
@@ -123,6 +123,24 @@ namespace WebFormsUI
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
 
         /// <summary>
+        /// lblMusteriAdi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMusteriAdi;
+
+        /// <summary>
+        /// lblMusteriTelefon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMusteriTelefon;
+
+        /// <summary>
         /// btnEkle control.
         /// </summary>
         /// <remarks>
@@ -148,5 +166,14 @@ namespace WebFormsUI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSil;
+
+        /// <summary>
+        /// lblMesaj control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMesaj;
     }
 }

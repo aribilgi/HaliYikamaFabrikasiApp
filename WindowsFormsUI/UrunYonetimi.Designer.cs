@@ -31,6 +31,16 @@ namespace WindowsFormsUI
         {
             this.dgvUrunler = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSil = new System.Windows.Forms.Button();
+            this.btnGuncelle = new System.Windows.Forms.Button();
+            this.btnEkle = new System.Windows.Forms.Button();
+            this.cbMusteriler = new System.Windows.Forms.ComboBox();
+            this.dtpTeslimTarihi = new System.Windows.Forms.DateTimePicker();
+            this.dtpAlisTarihi = new System.Windows.Forms.DateTimePicker();
+            this.txtTutar = new System.Windows.Forms.TextBox();
+            this.txtOlcu = new System.Windows.Forms.TextBox();
+            this.txtCinsi = new System.Windows.Forms.TextBox();
+            this.txtUrunAdi = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,16 +48,6 @@ namespace WindowsFormsUI
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtUrunAdi = new System.Windows.Forms.TextBox();
-            this.txtCinsi = new System.Windows.Forms.TextBox();
-            this.txtOlcu = new System.Windows.Forms.TextBox();
-            this.txtTutar = new System.Windows.Forms.TextBox();
-            this.dtpAlisTarihi = new System.Windows.Forms.DateTimePicker();
-            this.dtpTeslimTarihi = new System.Windows.Forms.DateTimePicker();
-            this.cbMusteriler = new System.Windows.Forms.ComboBox();
-            this.btnEkle = new System.Windows.Forms.Button();
-            this.btnGuncelle = new System.Windows.Forms.Button();
-            this.btnSil = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUrunler)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +61,7 @@ namespace WindowsFormsUI
             this.dgvUrunler.RowTemplate.Height = 24;
             this.dgvUrunler.Size = new System.Drawing.Size(776, 204);
             this.dgvUrunler.TabIndex = 0;
+            this.dgvUrunler.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUrunler_CellClick);
             // 
             // groupBox1
             // 
@@ -87,6 +88,86 @@ namespace WindowsFormsUI
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ürün Bilgileri";
+            // 
+            // btnSil
+            // 
+            this.btnSil.Location = new System.Drawing.Point(365, 177);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(75, 23);
+            this.btnSil.TabIndex = 18;
+            this.btnSil.Text = "Sil";
+            this.btnSil.UseVisualStyleBackColor = true;
+            // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.Location = new System.Drawing.Point(234, 177);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(91, 23);
+            this.btnGuncelle.TabIndex = 17;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.UseVisualStyleBackColor = true;
+            // 
+            // btnEkle
+            // 
+            this.btnEkle.Location = new System.Drawing.Point(119, 177);
+            this.btnEkle.Name = "btnEkle";
+            this.btnEkle.Size = new System.Drawing.Size(75, 23);
+            this.btnEkle.TabIndex = 16;
+            this.btnEkle.Text = "Ekle";
+            this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
+            // 
+            // cbMusteriler
+            // 
+            this.cbMusteriler.DisplayMember = "Adi";
+            this.cbMusteriler.FormattingEnabled = true;
+            this.cbMusteriler.Location = new System.Drawing.Point(365, 102);
+            this.cbMusteriler.Name = "cbMusteriler";
+            this.cbMusteriler.Size = new System.Drawing.Size(121, 24);
+            this.cbMusteriler.TabIndex = 15;
+            this.cbMusteriler.ValueMember = "Id";
+            // 
+            // dtpTeslimTarihi
+            // 
+            this.dtpTeslimTarihi.Location = new System.Drawing.Point(365, 73);
+            this.dtpTeslimTarihi.Name = "dtpTeslimTarihi";
+            this.dtpTeslimTarihi.Size = new System.Drawing.Size(200, 22);
+            this.dtpTeslimTarihi.TabIndex = 14;
+            // 
+            // dtpAlisTarihi
+            // 
+            this.dtpAlisTarihi.Location = new System.Drawing.Point(365, 42);
+            this.dtpAlisTarihi.Name = "dtpAlisTarihi";
+            this.dtpAlisTarihi.Size = new System.Drawing.Size(200, 22);
+            this.dtpAlisTarihi.TabIndex = 13;
+            // 
+            // txtTutar
+            // 
+            this.txtTutar.Location = new System.Drawing.Point(94, 126);
+            this.txtTutar.Name = "txtTutar";
+            this.txtTutar.Size = new System.Drawing.Size(100, 22);
+            this.txtTutar.TabIndex = 12;
+            // 
+            // txtOlcu
+            // 
+            this.txtOlcu.Location = new System.Drawing.Point(94, 98);
+            this.txtOlcu.Name = "txtOlcu";
+            this.txtOlcu.Size = new System.Drawing.Size(100, 22);
+            this.txtOlcu.TabIndex = 11;
+            // 
+            // txtCinsi
+            // 
+            this.txtCinsi.Location = new System.Drawing.Point(94, 70);
+            this.txtCinsi.Name = "txtCinsi";
+            this.txtCinsi.Size = new System.Drawing.Size(100, 22);
+            this.txtCinsi.TabIndex = 10;
+            // 
+            // txtUrunAdi
+            // 
+            this.txtUrunAdi.Location = new System.Drawing.Point(94, 42);
+            this.txtUrunAdi.Name = "txtUrunAdi";
+            this.txtUrunAdi.Size = new System.Drawing.Size(100, 22);
+            this.txtUrunAdi.TabIndex = 9;
             // 
             // label1
             // 
@@ -150,86 +231,6 @@ namespace WindowsFormsUI
             this.label7.Size = new System.Drawing.Size(54, 17);
             this.label7.TabIndex = 8;
             this.label7.Text = "Müşteri";
-            // 
-            // txtUrunAdi
-            // 
-            this.txtUrunAdi.Location = new System.Drawing.Point(94, 42);
-            this.txtUrunAdi.Name = "txtUrunAdi";
-            this.txtUrunAdi.Size = new System.Drawing.Size(100, 22);
-            this.txtUrunAdi.TabIndex = 9;
-            // 
-            // txtCinsi
-            // 
-            this.txtCinsi.Location = new System.Drawing.Point(94, 70);
-            this.txtCinsi.Name = "txtCinsi";
-            this.txtCinsi.Size = new System.Drawing.Size(100, 22);
-            this.txtCinsi.TabIndex = 10;
-            // 
-            // txtOlcu
-            // 
-            this.txtOlcu.Location = new System.Drawing.Point(94, 98);
-            this.txtOlcu.Name = "txtOlcu";
-            this.txtOlcu.Size = new System.Drawing.Size(100, 22);
-            this.txtOlcu.TabIndex = 11;
-            // 
-            // txtTutar
-            // 
-            this.txtTutar.Location = new System.Drawing.Point(94, 126);
-            this.txtTutar.Name = "txtTutar";
-            this.txtTutar.Size = new System.Drawing.Size(100, 22);
-            this.txtTutar.TabIndex = 12;
-            // 
-            // dtpAlisTarihi
-            // 
-            this.dtpAlisTarihi.Location = new System.Drawing.Point(365, 42);
-            this.dtpAlisTarihi.Name = "dtpAlisTarihi";
-            this.dtpAlisTarihi.Size = new System.Drawing.Size(200, 22);
-            this.dtpAlisTarihi.TabIndex = 13;
-            // 
-            // dtpTeslimTarihi
-            // 
-            this.dtpTeslimTarihi.Location = new System.Drawing.Point(365, 73);
-            this.dtpTeslimTarihi.Name = "dtpTeslimTarihi";
-            this.dtpTeslimTarihi.Size = new System.Drawing.Size(200, 22);
-            this.dtpTeslimTarihi.TabIndex = 14;
-            // 
-            // cbMusteriler
-            // 
-            this.cbMusteriler.DisplayMember = "Adi";
-            this.cbMusteriler.FormattingEnabled = true;
-            this.cbMusteriler.Location = new System.Drawing.Point(365, 102);
-            this.cbMusteriler.Name = "cbMusteriler";
-            this.cbMusteriler.Size = new System.Drawing.Size(121, 24);
-            this.cbMusteriler.TabIndex = 15;
-            this.cbMusteriler.ValueMember = "Id";
-            // 
-            // btnEkle
-            // 
-            this.btnEkle.Location = new System.Drawing.Point(119, 177);
-            this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(75, 23);
-            this.btnEkle.TabIndex = 16;
-            this.btnEkle.Text = "Ekle";
-            this.btnEkle.UseVisualStyleBackColor = true;
-            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
-            // 
-            // btnGuncelle
-            // 
-            this.btnGuncelle.Location = new System.Drawing.Point(234, 177);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(91, 23);
-            this.btnGuncelle.TabIndex = 17;
-            this.btnGuncelle.Text = "Güncelle";
-            this.btnGuncelle.UseVisualStyleBackColor = true;
-            // 
-            // btnSil
-            // 
-            this.btnSil.Location = new System.Drawing.Point(365, 177);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(75, 23);
-            this.btnSil.TabIndex = 18;
-            this.btnSil.Text = "Sil";
-            this.btnSil.UseVisualStyleBackColor = true;
             // 
             // UrunYonetimi
             // 

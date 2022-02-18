@@ -23,6 +23,7 @@ namespace WindowsFormsUI
         void Yukle()
         {
             dgvUrunler.DataSource = manager.GetAll();
+            cbMusteriler.DataSource = musteriManager.GetAll();
         }
         void Temizle()
         {
@@ -60,5 +61,17 @@ namespace WindowsFormsUI
             else MessageBox.Show("Kayıt Başarısız!");
         }
 
+        private void dgvUrunler_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = Convert.ToInt32(dgvUrunler.CurrentRow.Cells[0].Value);
+            var kayit = manager.Find(id);
+
+            txtCinsi.Text = kayit.Cinsi;
+            txtOlcu.Text = kayit.Olcu;
+            txtTutar.Text = kayit.Tutar.ToString();
+            txtUrunAdi.Text = kayit.UrunAdi;
+            dtpAlisTarihi.Value = kayit.AlisTarihi;
+            dtpTeslimTarihi.Value = kayit.TeslimTarihi;
+        }
     }
 }
