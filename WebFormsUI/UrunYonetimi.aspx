@@ -74,7 +74,7 @@
         <tr>
             <td>Tutar</td>
             <td>
-                <asp:TextBox ID="txtTutar" runat="server" TextMode="Number"></asp:TextBox>
+                <asp:TextBox ID="txtTutar" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtTutar" ErrorMessage="Boş Geçilemez!" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
             <td>
@@ -89,7 +89,7 @@
             <td colspan="2">
                 <asp:Button ID="btnEkle" runat="server" Text="Ekle" OnClick="btnEkle_Click" />
                 <asp:Button ID="btnGuncelle" runat="server" Text="Güncelle" Enabled="False" OnClick="btnGuncelle_Click" />
-                <asp:Button ID="btnSil" runat="server" Text="Sil" Enabled="False" ValidationGroup="sil" />
+                <asp:Button ID="btnSil" runat="server" Text="Sil" Enabled="False" ValidationGroup="sil" OnClick="btnSil_Click" />
                 <asp:Label ID="lblMesaj" runat="server"></asp:Label>
             </td>
             <td>&nbsp;</td>

@@ -100,5 +100,24 @@ namespace WebFormsUI
             btnGuncelle.Enabled = true;
             btnSil.Enabled = true;
         }
+
+        protected void btnSil_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = Convert.ToInt32(dgvUrunler.SelectedRow.Cells[1].Text);
+                var kayit = manager.Find(id);
+                var sonuc = manager.Delete(kayit);
+                if (sonuc > 0)
+                {
+                    Response.Redirect("UrunYonetimi.aspx");
+                }
+                else lblMesaj.Text = "Silmede Hata Oluştu! ";
+            }
+            catch (Exception hata)
+            {
+                lblMesaj.Text = "Silmede Hata Oluştu! " + hata.Message;
+            }
+        }
     }
 }

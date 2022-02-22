@@ -8,6 +8,7 @@ namespace WebFormsUI
     public partial class KullaniciYonetimi : System.Web.UI.Page
     {
         KullaniciManager manager = new KullaniciManager();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             Yukle();

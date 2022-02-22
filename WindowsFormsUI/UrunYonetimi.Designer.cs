@@ -97,6 +97,7 @@ namespace WindowsFormsUI
             this.btnSil.TabIndex = 18;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnGuncelle
             // 
@@ -106,6 +107,7 @@ namespace WindowsFormsUI
             this.btnGuncelle.TabIndex = 17;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnEkle
             // 

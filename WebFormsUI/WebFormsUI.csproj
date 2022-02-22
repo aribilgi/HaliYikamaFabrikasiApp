@@ -116,6 +116,7 @@
     <Content Include="Global.asax" />
     <Content Include="KullaniciYonetimi.aspx" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="Login.aspx" />
     <Content Include="MusteriYonetimi.aspx" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -150,6 +151,13 @@
     </Compile>
     <Compile Include="KullaniciYonetimi.aspx.designer.cs">
       <DependentUpon>KullaniciYonetimi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="MusteriYonetimi.aspx.cs">
       <DependentUpon>MusteriYonetimi.aspx</DependentUpon>

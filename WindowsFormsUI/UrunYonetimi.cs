@@ -73,5 +73,42 @@ namespace WindowsFormsUI
             dtpAlisTarihi.Value = kayit.AlisTarihi;
             dtpTeslimTarihi.Value = kayit.TeslimTarihi;
         }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dgvUrunler.CurrentRow.Cells[0].Value);
+            var kayit = manager.Find(id);
+            var sonuc = manager.Delete(kayit);
+            if (sonuc > 0)
+            {
+                Temizle();
+                Yukle();
+                MessageBox.Show("Kayıt Silindi!");
+            }
+            else MessageBox.Show("Kayıt Silinemedi!");
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dgvUrunler.CurrentRow.Cells[0].Value);
+            var sonuc = manager.Update(new Urun
+            {
+                Id = id,
+                AlisTarihi = dtpAlisTarihi.Value,
+                Cinsi = txtCinsi.Text,
+                MusteriId = (int)cbMusteriler.SelectedValue,
+                Olcu = txtOlcu.Text,
+                TeslimTarihi = dtpTeslimTarihi.Value,
+                Tutar = Convert.ToDecimal(txtTutar.Text),
+                UrunAdi = txtUrunAdi.Text
+            });
+            if (sonuc > 0)
+            {
+                Temizle();
+                Yukle();
+                MessageBox.Show("Kayıt Başarılı!");
+            }
+            else MessageBox.Show("Kayıt Başarısız!");
+        }
     }
 }
