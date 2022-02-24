@@ -10,18 +10,22 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <%--web form projelerinde varsayılan açılış sayfası default.aspx tir.--%>
-    <header>
+    <%--web form projelerinde varsayılan açılış sayfası default.aspx tir.
+       web form projelerinde asp.net komponentleri kullanmak istiyorsak bunları aşağıdaki form elementinin içine eklemeliyiz!! --%>
+    
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <header>
         <ul id="menu">
             <li><a href="KullaniciYonetimi.aspx">Kullanıcı Yönetimi</a></li>
             <li><a href="MusteriYonetimi.aspx">Müşteri Yönetimi</a></li>
             <li><a href="UrunYonetimi.aspx">Ürün Yönetimi</a></li>
+            <li>
+                <asp:LinkButton ID="lbCikis" runat="server" OnClick="lbCikis_Click" ValidationGroup="cikis">Çıkış</asp:LinkButton>
+            </li>
         </ul>
     </header>
     <hr />
-    <form id="form1" runat="server">
-        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
