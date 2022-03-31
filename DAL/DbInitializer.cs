@@ -7,7 +7,7 @@ using Entities;
 
 namespace DAL
 {
-    public class DbInitializer : DropCreateDatabaseIfModelChanges<DatabaseContext>
+    public class DbInitializer : CreateDatabaseIfNotExists<DatabaseContext>
     {
         protected override void Seed(DatabaseContext context)
         {
