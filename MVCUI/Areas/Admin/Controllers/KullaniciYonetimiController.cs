@@ -29,14 +29,54 @@ namespace MVCUI.Areas.Admin.Controllers
             if (ModelState.IsValid) // Eğer modelden gelen validasyon kuralları geçerliyse
             {
                 // Buradaki kodları işlet
+                kullanici.EklenmeTarihi = DateTime.Now;
                 int sonuc = manager.Add(kullanici);
                 if (sonuc > 0)
                 {
-                    return Redirect("Index");
+                    return RedirectToAction("Index");
                 }
             }
             
             return View(kullanici);
+        }
+        public ActionResult Edit(int id)
+        {
+            var kayit = manager.Find(id);
+            if (kayit == null)
+            {
+                return HttpNotFound(); // Eğer gelen id ye ait kayıt db de yoksa ekrana sayfa bulunamadı hatası ver
+            }
+            return View(kayit);
+        }
+        [HttpPost]
+        public ActionResult Edit(Kullanici kullanici)
+        {
+            if (ModelState.IsValid) // Eğer modelden gelen validasyon kuralları geçerliyse
+            {
+                // Buradaki kodları işlet
+                int sonuc = manager.Update(kullanici);
+                if (sonuc > 0)
+                {
+                    return RedirectToAction("Index");
+                }
+            }
+            return View(kullanici);
+        }
+        public ActionResult Delete(int id)
+        {
+            var kayit = manager.Find(id);
+            if (kayit == null)
+            {
+                return HttpNotFound(); // Eğer gelen id ye ait kayıt db de yoksa ekrana sayfa bulunamadı hatası ver
+            }
+            return View(kayit);
+        }
+        [HttpPost]
+        public ActionResult Delete(int id, Kullanici kullanici)
+        {
+            var kayit = manager.Find(id); // silinecek kaydı bul
+            manager.Delete(kayit); // delete metoduna silinecek kaydı yolla
+            return RedirectToAction("Index"); // sayfayı index-liste sayfasına yönlendir
         }
     }
 }

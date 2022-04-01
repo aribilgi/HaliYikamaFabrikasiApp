@@ -142,6 +142,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Admin\Controllers\KullaniciYonetimiController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MusteriController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -171,6 +172,10 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Areas\Admin\Views\KullaniciYonetimi\Index.cshtml" />
     <Content Include="Areas\Admin\Views\KullaniciYonetimi\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\KullaniciYonetimi\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\KullaniciYonetimi\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Musteri\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Musteri\Create.cshtml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
