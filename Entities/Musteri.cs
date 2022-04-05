@@ -9,14 +9,15 @@ namespace Entities
     public class Musteri : IEntity
     {
         public int Id { get; set; }
-        [DisplayName("Adı"), StringLength(50)]
+        [DisplayName("Adı"), StringLength(50), Required]
         public string Adi { get; set; }
-        [DisplayName("Soyadı"), StringLength(50)]
+        [DisplayName("Soyadı"), StringLength(50), Required]
         public string Soyadi { get; set; }
         [StringLength(50), EmailAddress]
         public string Email { get; set; }
-        [StringLength(15)]
+        [StringLength(15), Required]
         public string Telefon { get; set; }
+        [Required]
         public string Adres { get; set; }
         public virtual List<Urun> Uruns { get; set; }
         public Musteri()
