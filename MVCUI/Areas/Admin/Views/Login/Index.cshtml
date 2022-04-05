@@ -1,31 +1,39 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WebFormsUI.Login" %>
+﻿@model Entities.Kullanici
+
+@{
+    Layout = null; // layout seçmediğimiz için null olarak işaretleyip bu sayfa için html şablonu uyguladı
+}
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
     <title>Yönetici Girişi</title>
     <style type="text/css">
-        html, body, form{
-            height:100%;
-            margin:0;
-            padding:0;
+        html, body, form {
+            height: 100%;
+            margin: 0;
+            padding: 0;
         }
+
         form {
-            display:flex;
-            justify-content:center;
-            align-items:center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+
         .auto-style1 {
             width: 100%;
         }
-        #loginForm{
+
+        #loginForm {
             width: 333px;
         }
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form action="/admin/login" method="post">
         <div id="loginForm">
             <fieldset>
                 <legend>Kullanıcı Girişi</legend>
@@ -33,19 +41,19 @@
                     <tr>
                         <td>Kullanıcı Adı</td>
                         <td>
-                            <asp:TextBox ID="txtKullaniciAdi" runat="server"></asp:TextBox>
+                            <input id="KullaniciAdi" name="KullaniciAdi" type="text" />
                         </td>
                     </tr>
                     <tr>
                         <td>Şifre</td>
                         <td>
-                            <asp:TextBox ID="txtSifre" runat="server" TextMode="Password"></asp:TextBox>
+                            <input id="Sifre" name="Sifre" type="password" />
                         </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
                         <td>
-                            <asp:Button ID="btnGiris" runat="server" Text="Giriş" OnClick="btnGiris_Click" />
+                            <input id="Submit1" type="submit" value="Giriş" />
                         </td>
                     </tr>
                 </table>
