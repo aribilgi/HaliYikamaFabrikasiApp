@@ -1,0 +1,29 @@
+﻿Projemizi tamamladıktan sonra bir hosting firmasından alacağımız asp.net destekli host paketine
+ve mssql server veritabanına ihtiyacımız var.
+Bunları her hangi bir hosting firmasından satın aldıktan sonra yapmamız gerekenler;
+
+* Mvc veya web form projesine sağ tıklayıp açılan menüden Publish... menüsüne tıklıyoruz
+* Açılan pencerede projeyi nereye yayınlamak istediğimizle alakalı ayarlar yapılacak
+* Ekrandaki seçeneklerden Folder ı seçiyoruz ki bu bizim bilgisayarımıza çıktı alabilmek için
+* Folder ı seç > Next e bas
+* Açılan ekranda bilgisayarda nereye çıktı almak istediğimizi ayarlıyoruz
+* Burada Brows butonuna basarak farklı bir lokasyon seçebiliriz
+* Masüstünde veya istediğimiz bir yerde bir klasör oluşturalım
+* Masaüstüne Publish adında bir klasör oluşturduk
+* Brows butonuna basıp masaüstündeki açtığımız klasörü seçip ok diyoruz
+* Finish butonuna basıyoruz
+* Gerekli yapılandırmayı tamamladık
+* Aynı ekrandaki Publish butonuna tıklayarak yaptığımız ayarlara göre çıktı alabiliriz.
+
+Not : Yapılandırma ayarı gerekmedikçe değişmez ve 1 kere yapılır, 
+sonrasında artık yapmamız gereken sadece publish menüsünü açıp publish butonuna basmak,
+projede yapacağımız her güncelleme için yeni bir publish yapıp onu sunucuya göndermeliyiz.
+
+! Önemli! Projeyi publish etmeden veritabanı ayarlarını sunucudaki gerçek veritabanı ayarına göre
+değiştirmeliyiz yoksa uygulama hostta çalışmaz!
+
+Uygulamayı hostumuza yüklemek için Ftp programlarına ihtiyaç duyarız.
+Filezilla isimli Ftp programını google dan aratarak Download File zilla Client i seçip pc mize indirip kurmalıyız.
+Sonrasına file zilla programını açıp hostmuzun sunucu adresi, kullanıcı adı, parola yazıp Hızlı bağlan
+butonuna basarak sunucuya bağlanıp pun-blish aldığımız klasördeki dosyaları 
+File zillanın sağ bölmesine sürükle bırakla atıp yükleyebiliriz.
