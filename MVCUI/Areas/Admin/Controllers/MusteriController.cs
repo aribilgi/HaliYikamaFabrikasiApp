@@ -8,6 +8,7 @@ using Entities;
 
 namespace MVCUI.Areas.Admin.Controllers
 {
+    [Authorize]
     public class MusteriController : Controller
     {
         MusteriManager manager = new MusteriManager();

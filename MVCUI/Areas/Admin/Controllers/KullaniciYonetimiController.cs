@@ -8,6 +8,7 @@ using Entities;
 
 namespace MVCUI.Areas.Admin.Controllers
 {
+    [Authorize]
     public class KullaniciYonetimiController : Controller
     {
         KullaniciManager manager = new KullaniciManager();

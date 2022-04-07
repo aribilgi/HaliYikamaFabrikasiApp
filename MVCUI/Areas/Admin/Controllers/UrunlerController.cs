@@ -12,6 +12,7 @@ using Entities;
 
 namespace MVCUI.Areas.Admin.Controllers
 {
+    [Authorize] // Urunler Controller ındaki tüm actionlara erişim için admin girişini gerekli kıl
     public class UrunlerController : Controller
     {
         private DatabaseContext db = new DatabaseContext();
